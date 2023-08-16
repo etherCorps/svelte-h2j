@@ -85,9 +85,9 @@ MIT
 
 ---
 
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
+> [ethercorps.io](https://www.ethercorps.io) &nbsp;&middot;&nbsp;
+> GitHub [@theetherGit](https://github.com/theetherGit) &nbsp;&middot;&nbsp;
+> Twitter [@theether0](https://twitter.com/theether0)
 
 [contributors-shield]: https://img.shields.io/github/contributors/etherCorps/svelte-h2j.svg?style=for-the-badge
 [contributors-url]: https://github.com/etherCorps/svelte-h2j/graphs/contributors
