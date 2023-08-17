@@ -18,8 +18,8 @@
 <h4 align="center">Library to convert HTML + CSS to JSX using Svelte Compiler.</h4>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/svelte-h2j.svg"
+  <a href="https://badge.fury.io/js/@ethercorps%2Fsvelte-h2j.svg">
+    <img src="https://badge.fury.io/js/@ethercorps%2Fsvelte-h2j.svg"
          alt="Gitter">
   </a>
 </p>
