@@ -20,6 +20,7 @@ jobs:
       - run: pnpm install
       # - run: pnpm test:build
       - run: pnpm build
+      - run: cd package && ls && cd ..
       # - run: pnpm test
       - uses: JS-DevTools/npm-publish@v2
         with:
