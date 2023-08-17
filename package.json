@@ -1,5 +1,5 @@
 {
-	"name": "svelte-h2j",
+	"name": "@ethercorps/svelte-h2j",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
