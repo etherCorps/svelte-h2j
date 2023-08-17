@@ -5,7 +5,6 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
 <h1 align="center">
   <br>
   <a href="http://www.ethercorps.io">
@@ -34,15 +33,15 @@
   <a href="#license">License</a>
 </p>
 
-[//]: # (![screenshot]&#40;https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif&#41;)
+[//]: # '![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)'
 
 ## Key Features
 
-* Convert html/css to jsx
-    - Useful when you are going to use satori.
-* Compatible with new version of svelte
-    -  As new versions are coming for better development in svelte we maintain that.
-* Easy to use with all available syntax in html css.
+- Convert html/css to jsx
+  - Useful when you are going to use satori.
+- Compatible with new version of svelte
+  - As new versions are coming for better development in svelte we maintain that.
+- Easy to use with all available syntax in html css.
 
 ## How To Use
 
@@ -72,13 +71,13 @@ This software uses the following open source packages:
 
 ## Related
 
-[satori-html](https://github.com/natemoo-re/satori-html) - Similar but uses other libraries as dependency when we 
+[satori-html](https://github.com/natemoo-re/satori-html) - Similar but uses other libraries as dependency when we
 can approach with svelte compiler in sveltekit.
-
 
 ## You may also like...
 
 - [Sveltekit OG](https://github.com/etherCorps/sveltekit-og) - An alternative to @vercel/og for sveltekit.
+
 ## License
 
 MIT

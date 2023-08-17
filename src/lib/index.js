@@ -1,1 +1,3 @@
-// Reexport your entry components here
+import { toReactElement } from './toReactElement.js';
+
+export default toReactElement;
