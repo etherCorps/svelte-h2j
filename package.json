@@ -1,12 +1,29 @@
 {
 	"name": "@ethercorps/svelte-h2j",
 	"version": "0.0.1",
+	"description": "A library which uses svelte compiler to convert html & css to jsx. Useful for using satori with svelte & Kit",
+	"homepage": "https://github.com/etherCorps/svelte-h2j#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/etherCorps/svelte-h2j"
+	},
+	"bugs": {
+		"url": "https://github.com/etherCorps/svelte-h2j/issues"
+	},
+	"author": [
+		{
+			"name": "Shivam Meena",
+			"email": "shivam@theether.in",
+			"url": "https://twitter.com/theether0"
+		}
+	],
+	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && npm run package",
+		"build": "vite build && pnpm run package",
 		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
-		"prepublishOnly": "npm run package",
+		"package": "svelte-kit sync && svelte-package -o package && node cpExtraFiles.js && publint",
+		"prepublishOnly": "pnpm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest",
@@ -17,12 +34,16 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
-		}
+		},
+		"./package.json": "./package.json"
 	},
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
+		"!dist/**/*.spec.*",
+		"package.json",
+		"README.md",
+		"LICENSE"
 	],
 	"peerDependencies": {
 		"svelte": "^4.0.0"
@@ -33,6 +54,7 @@
 		"@sveltejs/package": "^2.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
+		"@vitest/ui": "^0.34.1",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",

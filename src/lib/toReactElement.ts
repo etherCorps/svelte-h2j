@@ -1,4 +1,4 @@
-import { parse, walk } from 'svelte/compiler';
+import {compile, parse, walk} from 'svelte/compiler';
 import type { Ast } from 'svelte/types/compiler/interfaces';
 
 /* Start of code from satori-html for cssToObject converter*/
@@ -7,7 +7,7 @@ const cssToObject = (str: string) => {
 	const obj: Record<string, string> = {};
 	let t = 0;
 	let pair = ['', ''];
-	const flags: Record<string, number> = {};
+	let flags: Record<string, number> = { "(": 0, ")": 0 };
 	for (const c of str) {
 		if (!flags['('] && c === ':') {
 			t = 1;
@@ -62,12 +62,20 @@ const root: VNode = {
 
 export function toReactElement(htmlString: string): VNode {
 	const svelteAST: Ast = parse(htmlString);
+	const dummy = compile(htmlString)
+	console.log(dummy.css)
 	walk(svelteAST as any, {
 		enter(node: any, parent: any, prop: any, index: any) {
 			let newNode: any = {};
+			if (typeof node.css === "object" && node.css.children.length > 0){
+				node.css.children.forEach((children: any) => {
+					console.log(children)
+				})
+			}
 			if (node.type === 'Fragment') {
 				nodeMap.set(node, root);
 			} else if (node.type === 'Element') {
+				console.log()
 				newNode.type = node.name;
 				let { ...props } = node.attributes;
 				if (node.attributes.length > 0) {
