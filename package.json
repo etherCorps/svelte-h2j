@@ -40,7 +40,14 @@
 	"files": [
 		"package/**/*.*",
 		"!package/**/*.test.*",
-		"!package/**/*.spec.*"
+		"!package/**/*.spec.*",
+		"package.json",
+		"LICENSE",
+		"README.md",
+		"index.d.ts",
+		"index.js",
+		"toReactElement.d.ts",
+		"toReactElement.js"
 	],
 	"peerDependencies": {
 		"svelte": "^4.0.0"
