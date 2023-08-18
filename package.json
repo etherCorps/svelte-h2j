@@ -39,6 +39,7 @@
 	},
 	"files": [
 		"package",
+		"package/*",
 		"!package/**/*.test.*",
 		"!package/**/*.spec.*",
 		"package.json",
