@@ -23,6 +23,10 @@ jobs:
       - run: cd package && ls
       # - run: pnpm test
       - uses: JS-DevTools/npm-publish@v2
+        -run: ls
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          package: "./package"
+          ignore-scripts: true
+          dry-run: true
 
