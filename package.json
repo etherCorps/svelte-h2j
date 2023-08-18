@@ -38,13 +38,9 @@
 		"./package.json": "./package.json"
 	},
 	"files": [
-		"package",
-		"package/*",
+		"package/**/*.*",
 		"!package/**/*.test.*",
-		"!package/**/*.spec.*",
-		"package.json",
-		"README.md",
-		"LICENSE"
+		"!package/**/*.spec.*"
 	],
 	"peerDependencies": {
 		"svelte": "^4.0.0"
