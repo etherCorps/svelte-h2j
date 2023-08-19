@@ -1,6 +1,6 @@
-import {compile, parse, walk} from 'svelte/compiler';
+import { parse, walk } from 'svelte/compiler';
 import type { Ast } from 'svelte/types/compiler/interfaces';
-import {extractStyles} from "$lib/inlineCSS.js";
+import { extractStyles } from './inlineCSS.js';
 
 /* Start of code from satori-html for cssToObject converter*/
 const camelize = (ident: string) => ident.replace(/-([a-z])/g, (_, char) => char.toUpperCase());
@@ -8,7 +8,7 @@ const cssToObject = (str: string) => {
 	const obj: Record<string, string> = {};
 	let t = 0;
 	let pair = ['', ''];
-	let flags: Record<string, number> = { "(": 0, ")": 0 };
+	const flags: Record<string, number> = { '(': 0, ')': 0 };
 	for (const c of str) {
 		if (!flags['('] && c === ':') {
 			t = 1;
@@ -63,9 +63,9 @@ const root: VNode = {
 
 export function toReactElement(htmlString: string): VNode {
 	const svelteAST: Ast = parse(htmlString);
-	let styles: Record<string, string> = {}
+	let styles: Record<string, string> = {};
 	if (svelteAST && svelteAST.css) {
-		styles = extractStyles( svelteAST.css );
+		styles = extractStyles(svelteAST.css);
 	}
 
 	walk(svelteAST as any, {
@@ -74,28 +74,28 @@ export function toReactElement(htmlString: string): VNode {
 			if (node.type === 'Fragment') {
 				nodeMap.set(node, root);
 			} else if (node.type === 'Element') {
-				console.log()
 				newNode.type = node.name;
 				let { ...props } = node.attributes;
 				if (node.attributes.length > 0) {
-					let classStyles: string|null = null;
+					let classStyles: string | null = null;
 					let styleExists = false;
 					node.attributes.forEach((attribute: any) => {
-						if (Object.keys( styles ).length && attribute.name === 'class') {
+						if (Object.keys(styles).length && attribute.name === 'class') {
 							classStyles = styles[attribute.value[0].data];
 						}
 						if (attribute.name === 'style') {
 							styleExists = true;
-							const newRawStyle = classStyles ? attribute.value[0].data + '; ' + classStyles : attribute.value[0].data;
+							const newRawStyle = classStyles
+								? attribute.value[0].data + '; ' + classStyles
+								: attribute.value[0].data;
 							props['style'] = cssToObject(newRawStyle) as any;
 						} else {
-							props[attribute.name] = attribute.value[0].data as any
-						};
+							props[attribute.name] = attribute.value[0].data as any;
+						}
 					});
-					if (Object.keys( styles ).length && !styleExists && classStyles) {
+					if (Object.keys(styles).length && !styleExists && classStyles) {
 						props['style'] = cssToObject(classStyles);
 					}
-					console.log(props);
 					delete props[0];
 				}
 				// numbered props failing on svgs

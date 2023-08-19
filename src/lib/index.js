@@ -1,3 +1,2 @@
-import { toReactElement } from './toReactElement.js';
-
-export default toReactElement;
+export { toReactElement } from './toReactElement.js';
+export { svelteComponentToJsx } from './svelteToJsx.js';

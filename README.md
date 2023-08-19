@@ -15,7 +15,7 @@
   <br>
 </h1>
 
-<h4 align="center">Library to convert HTML + CSS to JSX using Svelte Compiler.</h4>
+<h4 align="center">Library to convert HTML + CSS to JSX with Svelte Compiler.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/@ethercorps%2Fsvelte-h2j.svg">
@@ -33,20 +33,19 @@
   <a href="#license">License</a>
 </p>
 
-[//]: # '![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)'
-
 ## Key Features
 
 - Convert html/css to jsx
-  - Useful when you are going to use satori.
+  - Useful when you are going to use satori with Svelte & Kit.
 - Compatible with new version of svelte
-  - As new versions are coming for better development in svelte we maintain that.
+  - As new versions are coming for better performance in svelte we maintain that.
 - Easy to use with all available syntax in html css.
+  - Support for class based internal style.
+  - inline css
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
+- Install @ethercorps/svelte-h2j using your favourite node package manager. 
 ```bash
 # NPM
 $ npm install -D @ethercorps/svelte-h2j
@@ -61,13 +60,73 @@ $ pnpm install -D @ethercorps/svelte-h2j
 # Yarn
 $ yarn add --save @ethercorps/svelte-h2j
 ```
+- To convert html, css to JSX (Also supports Tailwind, inline css)
+```javascript
+import {toReactElement} from "@ethercorps/svelte-h2j"
+const htmlString =`
+ <div tw="bg-gray-50 flex w-full h-full items-center justify-center">
+    <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
+      <h2 tw="flex flex-col text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 text-left">
+        <span>Ready to dive in?</span>
+        <span tw="text-indigo-600">Start your free trial today.</span>
+      </h2>
+      <div tw="mt-8 flex md:mt-0">
+        <div tw="flex rounded-md shadow">
+          <a href="#" tw="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white">Get started</a>
+        </div>
+        <div tw="ml-3 flex rounded-md shadow">
+          <a href="#" tw="flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+
+const jsx = toReactElement(htmlTemplate)  // Takes a string only
+const svg = await satori(jsx, {
+  width: options.width,
+  height: options.height,
+  debug: options.debug,
+  fonts: options.fonts || [
+    {
+      name: 'sans serif',
+      data: fontData,
+      style: 'normal',
+      weight: 700
+    }
+  ]
+});
+
+```
+- We also provide a server side api for converting svelte components to JSX.
+```javascript
+import {svelteComponentToJsx} from "@ethercorps/svelte-h2j";
+import SvelteComponent from "SvelteComponent.svelte"
+const jsx = svelteComponentToJsx(SvelteComponent, props = {
+	a: 2 // if you have `export let a;` in component
+}) // Takes two parameters 1. Component 2. Component Props
+
+const svg = await satori(jsx, {
+  width: options.width,
+  height: options.height,
+  debug: options.debug,
+  fonts: options.fonts || [
+    {
+      name: 'sans serif',
+      data: fontData,
+      style: 'normal',
+      weight: 700
+    }
+  ]
+});
+
+```
 
 ## Credits
 
 This software uses the following open source packages:
 
-- [Node.js](https://nodejs.org/)
-- [Satori](https://github.com/vercel/satori)
+- [Svelte](https://github.com/sveltejs/svelte)
 
 ## Related
 
