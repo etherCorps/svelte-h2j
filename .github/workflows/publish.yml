@@ -19,10 +19,9 @@ jobs:
           version: 8.6.1
       - run: pnpm install
       - run: pnpm package
-      - run: cd package && ls
       - run: pnpm test
       - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          package: './package'
           ignore-scripts: true
+
