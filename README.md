@@ -36,16 +36,16 @@
 ## Key Features
 
 - Convert html/css to jsx
-  - Useful when you are going to use satori with Svelte & Kit.
+    - Useful when you are going to use satori with Svelte & Kit.
 - Compatible with new version of svelte
-  - As new versions are coming for better performance in svelte we maintain that.
+    - As new versions are coming for better performance in svelte we maintain that.
 - Easy to use with all available syntax in html css.
-  - Support for class based internal style.
-  - inline css
+    - Support for class based internal style.
+    - inline css
 
 ## How To Use
 
-- Install @ethercorps/svelte-h2j using your favourite node package manager. 
+- Install @ethercorps/svelte-h2j using your favourite node package manager.
 ```bash
 # NPM
 $ npm install -D @ethercorps/svelte-h2j

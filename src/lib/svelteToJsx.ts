@@ -1,4 +1,3 @@
-import type { SvelteComponent } from 'svelte';
 import { toReactElement } from './toReactElement.js';
 
 export function svelteComponentToJsx(component: any, props: Record<string, any> = {}) {

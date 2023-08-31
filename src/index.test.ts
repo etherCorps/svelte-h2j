@@ -1,7 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import { toReactElement } from './lib/toReactElement.js';
-import { svelteComponentToJsx } from '$lib/svelteToJsx.js';
-import Test from './Test.svelte';
 
 const wrap = (...children: any[]) => ({
 	type: 'div',
