@@ -49,7 +49,9 @@
 		"toReactElement.d.ts",
 		"toReactElement.js",
 		"inlineCSS.d.ts",
-		"inlineCSS.js"
+		"inlineCSS.js",
+		"svelteToJsx.js",
+		"svelteToJsx.d.ts"
 	],
 	"peerDependencies": {
 		"svelte": "^4.0.0"
