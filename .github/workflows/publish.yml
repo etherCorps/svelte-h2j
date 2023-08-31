@@ -18,12 +18,12 @@ jobs:
         with:
           version: 8.6.1
       - run: pnpm install
-      # - run: pnpm test:build
-      - run: pnpm build
+      - run: pnpm package
       - run: cd package && ls
-      # - run: pnpm test
+      - run: pnpm test
       - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: './package'
           ignore-scripts: true
+

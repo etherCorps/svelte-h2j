@@ -74,7 +74,6 @@
 		"vite": "^4.4.2",
 		"vitest": "^0.34.0"
 	},
-	"svelte": "./package/index.js",
 	"types": "./package/index.d.ts",
 	"type": "module"
 }
