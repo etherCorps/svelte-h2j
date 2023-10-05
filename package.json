@@ -1,6 +1,6 @@
 {
 	"name": "@ethercorps/svelte-h2j",
-	"version": "0.0.13",
+	"version": "0.1.0",
 	"description": "A library which uses svelte compiler to convert html & css to jsx. Useful for using satori with svelte & Kit",
 	"homepage": "https://github.com/etherCorps/svelte-h2j#readme",
 	"license": "MIT",
@@ -41,6 +41,10 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
+		},
+		"./vite": {
+			"types": "./dist/vite.d.ts",
+			"import": "./dist/vite.js"
 		}
 	},
 	"files": [
@@ -61,12 +65,13 @@
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"publint": "^0.1.16",
-		"svelte": "^4.2.0",
+		"svelte": "^4.2.1",
 		"svelte-check": "^3.5.1",
 		"tslib": "^2.6.2",
 		"typescript": "^5.2.2",
 		"vite": "^4.4.9",
-		"vitest": "^0.34.3"
+		"vitest": "^0.34.3",
+		"css-tree": "^2.3.1"
 	},
 	"types": "./dist/index.d.ts",
 	"type": "module"

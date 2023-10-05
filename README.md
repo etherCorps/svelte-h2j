@@ -48,18 +48,38 @@
 - Install @ethercorps/svelte-h2j using your favourite node package manager.
 ```bash
 # NPM
-$ npm install -D @ethercorps/svelte-h2j
+$ npm install @ethercorps/svelte-h2j css-tree
 ```
 
 ```bash
 # PNPM
-$ pnpm install -D @ethercorps/svelte-h2j
+$ pnpm install @ethercorps/svelte-h2j css-tree
 ```
 
 ```bash
 # Yarn
-$ yarn add --save @ethercorps/svelte-h2j
+$ yarn add @ethercorps/svelte-h2j css-tree
 ```
+```bash
+# bun
+$ bun install @ethercorps/svelte-h2j css-tree
+```
+
+- Add `vite` plugin to `vite.config.[js,ts]`
+```js
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vitest/config';
+import {vitePluginSvelteKitOG} from "@ethercorps/svelte-h2j/vite"
+
+export default defineConfig({
+	plugins: [sveltekit(), vitePluginSvelteKitOG()],
+	test: {
+		include: ['src/**/*.{test,spec}.{js,ts}']
+	}
+});
+```
+> This is required as we build for production and add css-tree while build.
+
 - To convert html, css to JSX (Also supports Tailwind, inline css)
 ```javascript
 import {toReactElement} from "@ethercorps/svelte-h2j"
