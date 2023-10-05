@@ -1,4 +1,4 @@
-import { parse, walk } from 'svelte/compiler';
+import { walk, parse } from 'svelte/compiler';
 import type { Ast } from 'svelte/types/compiler/interfaces';
 import { extractStyles } from './inlineCSS.js';
 
