@@ -69,10 +69,10 @@ $ bun install @ethercorps/svelte-h2j css-tree
 ```js
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
-import {vitePluginSvelteKitOG} from "@ethercorps/svelte-h2j/vite"
+import {vitePluginSvelteH2J} from "@ethercorps/svelte-h2j/vite"
 
 export default defineConfig({
-	plugins: [sveltekit(), vitePluginSvelteKitOG()],
+	plugins: [sveltekit(), vitePluginSvelteH2J()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	}
