@@ -1,6 +1,6 @@
 import { createRequire } from 'node:module';
 
-export function vitePluginSvelteKitOG() {
+export function vitePluginSvelteH2J() {
     const require = createRequire(import.meta.url);
     return {
         name: 'css-tree-resolver', // name of the plugin

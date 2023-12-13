@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { toReactElement } from '@ethercorps/svelte-h2j';
-import {ImageResponse} from "@ethercorps/sveltekit-og";
+import {ImageResponse} from "@vercel/og";
 
 export const GET: RequestHandler = async () => {
 	const text = 'Ready to dive in?';
@@ -29,5 +29,5 @@ export const GET: RequestHandler = async () => {
             </div>
         </div>
     </div>`.trim();
-	return new ImageResponse(htmlString);
+	return new ImageResponse(toReactElement(htmlString));
 };

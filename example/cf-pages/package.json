@@ -31,7 +31,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@cloudflare/pages-plugin-vercel-og": "^0.1.0",
-		"@ethercorps/svelte-h2j": "^0.1.0"
+		"@ethercorps/svelte-h2j": "^0.1.0",
+		"@ethercorps/sveltekit-og": "3.0.0-alpha.1"
 	}
 }
