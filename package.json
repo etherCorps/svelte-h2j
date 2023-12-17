@@ -41,12 +41,14 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js",
-			"import": "./dist/index.js"
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
 		},
 		"./vite": {
 			"types": "./dist/vite.d.ts",
 			"svelte": "./dist/vite.js",
-			"import": "./dist/vite.js"
+			"import": "./dist/vite.js",
+			"default": "./dist/vite.js"
 		}
 	},
 	"files": [

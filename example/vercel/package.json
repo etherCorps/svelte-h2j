@@ -30,7 +30,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@ethercorps/svelte-h2j": "link:../../",
-		"@vercel/og": "^0.5.17"
+		"@ethercorps/svelte-h2j": "^4.0.0",
+		"@vercel/og": "^0.5.17",
+		"vite-plugin-wasm": "^3.3.0",
+		"workers-og": "^0.0.14"
 	}
 }

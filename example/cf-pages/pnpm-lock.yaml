@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@ethercorps/svelte-h2j':
-    specifier: ^0.1.0
-    version: 0.1.0(svelte@4.2.1)
-  '@ethercorps/sveltekit-og':
-    specifier: 3.0.0-alpha.1
-    version: 3.0.0-alpha.1
+    specifier: ^4.0.0
+    version: 4.0.0(svelte@4.2.1)
+  '@vercel/og':
+    specifier: ^0.6.1
+    version: 0.6.1
 
 devDependencies:
   '@sveltejs/adapter-cloudflare':
@@ -315,22 +315,12 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@ethercorps/svelte-h2j@0.1.0(svelte@4.2.1):
-    resolution: {integrity: sha512-0cs5FgGgiJRgHr2paR3/49Fv/KsOjqbLEPbgZjJtdBiqUD3awZwgoK6ynwTA3zBq+KfHqAJjJU1XWbCwQMih3Q==}
+  /@ethercorps/svelte-h2j@4.0.0(svelte@4.2.1):
+    resolution: {integrity: sha512-2U56wEIys5MoFqQ863FCxRvu8rQjA3Esix/RpI5FktrbEBSXLoHYalYPeqZM1mPHSVOBAOHgcbmLONmhZa5zbQ==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
       svelte: 4.2.1
-    dev: false
-
-  /@ethercorps/sveltekit-og@3.0.0-alpha.1:
-    resolution: {integrity: sha512-g4/f0qArWa5JCYyrkOv/fDUyuylRE/s8IB0fCASSDWAmBfLNwbrttuNneObRz9j+LuDZ9210a2VWsU1jMpZSNw==}
-    dependencies:
-      '@ethercorps/svelte-h2j': link:../svelte-h2j
-      '@resvg/resvg-wasm': 2.5.0
-      just-camel-case: 6.2.0
-      satori: 0.10.9
-      yoga-wasm-web: 0.3.3
     dev: false
 
   /@fastify/busboy@2.0.0:
@@ -408,8 +398,8 @@ packages:
     resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
     dev: true
 
-  /@resvg/resvg-wasm@2.5.0:
-    resolution: {integrity: sha512-jM0zG54ykoGFiMMVvRxzHFVXhxCdQTGp+okLCWGIXt8bN2GLlsWpjvyU0vZJWkTsd+qLmy2dmYcPU02zC0IVMQ==}
+  /@resvg/resvg-wasm@2.6.0:
+    resolution: {integrity: sha512-iDkBM6Ivex8nULtBu8cX670/lfsGxq8U1cuqE+qS9xFpPQP1enPdVm/33Kq3+B+bAldA+AHNZnCgpmlHo/fZrQ==}
     engines: {node: '>= 10'}
     dev: false
 
@@ -646,6 +636,15 @@ packages:
       '@typescript-eslint/types': 6.7.4
       eslint-visitor-keys: 3.4.3
     dev: true
+
+  /@vercel/og@0.6.1:
+    resolution: {integrity: sha512-o0ItpTQrn7TdBRiYLoBmATfunenfI87AZ5S/SvS9puxN4rjuNdDHSV6ND24WBt0FK2SljfM9LYowK/99ql2bEA==}
+    engines: {node: '>=16'}
+    dependencies:
+      '@resvg/resvg-wasm': 2.6.0
+      satori: 0.10.9
+      yoga-wasm-web: 0.3.3
+    dev: false
 
   /acorn-jsx@5.3.2(acorn@8.10.0):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1311,10 +1310,6 @@ packages:
   /json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
     dev: true
-
-  /just-camel-case@6.2.0:
-    resolution: {integrity: sha512-ICenRLXwkQYLk3UyvLQZ+uKuwFVJ3JHFYFn7F2782G2Mv2hW8WPePqgdhpnjGaqkYtSVWnyCESZhGXUmY3/bEg==}
-    dev: false
 
   /keyv@4.5.3:
     resolution: {integrity: sha512-QCiSav9WaX1PgETJ+SpNnx2PRRapJ/oRSXM4VO5OGYGSjrxbKPVFVhB3l2OCbLCk329N8qyAtsJjSjvVBWzEug==}

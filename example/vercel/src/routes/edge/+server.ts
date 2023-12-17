@@ -1,6 +1,11 @@
-import type { RequestHandler} from "@sveltejs/kit";
+import type {RequestHandler} from "@sveltejs/kit";
 import {ImageResponse} from "workers-og";
 import {toReactElement} from "@ethercorps/svelte-h2j";
+import type {Config} from "@sveltejs/adapter-vercel";
+
+export const config: Config = {
+    runtime: 'edge',
+};
 
 export const GET: RequestHandler = async () => {
     const text = 'Ready to dive in?';
