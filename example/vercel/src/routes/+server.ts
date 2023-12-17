@@ -1,5 +1,5 @@
-import type {RequestHandler} from "@sveltejs/kit";
-import {ImageResponse} from "@vercel/og";
+import type { RequestHandler} from "@sveltejs/kit";
+import {ImageResponse} from "workers-og";
 import {toReactElement} from "@ethercorps/svelte-h2j";
 
 export const GET: RequestHandler = async () => {
@@ -28,6 +28,6 @@ export const GET: RequestHandler = async () => {
                 </div>
             </div>
         </div>
-    </div>`.trim()
+    </div>`.trim();
     return new ImageResponse( toReactElement( htmlString ))
 };

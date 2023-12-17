@@ -1,5 +1,5 @@
 import type {RequestHandler} from "@sveltejs/kit";
-import {ImageResponse} from "@vercel/og";
+import {ImageResponse} from "workers-og";
 import {svelteComponentToJsx} from "@ethercorps/svelte-h2j";
 import OG from "./og-example.svelte";
 
